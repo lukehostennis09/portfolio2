@@ -27,6 +27,7 @@
 						<li><a href="#two">Things I Can Do</a></li>
 						<li><a href="#three">A Few Accomplishments</a></li>
 						<li><a href="#four">Contact</a></li>
+						<li><a href="#clappingbutton">Clapping Button</a></li>
 					</ul>
 				</nav>
 				<footer>
@@ -51,85 +52,149 @@
 								<div class="image main" data-position="center">
 									<img src="images/unsplash.jpg" alt="" />
 								</div>
-								<div class="container">
+								<div id="one_" class="container">
 									<header class="major">
-										<h2>Luke's Portfolio Page</h2>
-										<p>Time to Begin My Journey!<br />
-										You look great today! Keep up the awesome job! <a href="http://linkedin.com">Thanks!</a>.</p>
+										<h2>{{ title }} Hi, dude! </h2>
+										<h2>{{ text }}</h2>
+										<p>{{ subtitle1 }}<br />
+										You look great today! <a href="http://linkedin.com">Thanks!</a> tribe.</p>
 									</header>
-									<p>Even though I don't speak Latin, check this out!  Faucibus sed lobortis aliquam lorem blandit. Lorem eu nunc metus col. Commodo id in arcu ante lorem ipsum sed accumsan erat praesent faucibus commodo ac mi lacus. Adipiscing mi ac commodo. Vis aliquet tortor ultricies non ante erat nunc integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum.</p>
+									<p> {{ latin }}</p>
 								</div>
 							</section>
+						
+						<!-- Two -->
+							<section id="two">
+								<div id="two_" class="container">
+									<h3> {{ title }}</h3>
+									<p> {{ latin }}</p>
+									<ul class="feature-icons">
+										<li class="fa-code"> {{ class1 }}</li>
+										<li class="fa-cubes"> {{ class2 }}</li>
+										<li class="fa-book"> {{ class3 }}</li>
+										<li class="fa-coffee"> {{ class4}}</li>
+										<li class="fa-bolt"> {{ class5 }}</li>
+										<li class="fa-users"> {{ class6 }}</li>
+									</ul>
+								</div>
+							</section>	
+
 							
 						<!-- Three -->
 						<section id="three" style="background-color:purple;"></section>
-							<div class="container">
-								<h3 style="color:red"> A Few Accomplishments</h3>
-								<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer. Integer eu ante ornare amet commetus.</p>
+							<div id="three_" class="container">
+								<h3 style="color:red"> {{ title }}</h3>
+								<p> {{ morelatin }}</p>
 								<div class="features">
 									<article>
 										<a href="#" class="image"><img src="images/unsplash.jpg" alt="" /></a>
 										<div class="inner">
-											<h4>Possibly broke spacetime</h4>
-											<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
+											<h4> {{ spacetime }}</h4>
+											<p> {{ space }}</p>
 										</div>
 									</article>
 									<article>
 										<a href="#" class="image"><img src="images/unsplash2.jpg" alt="" /></a>
 										<div class="inner">
-											<h4>Terraformed a small moon</h4>
-											<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
+											<h4> {{ moon }}</h4>
+											<p> {{ moon2 }} </p>
 										</div>
 									</article>
 									<article>
 										<a href="#" class="image"><img src="images/unsplash3.jpg" alt="" /></a>
 										<div class="inner">
-											<h4>Snapped dark matter in the wild</h4>
-											<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer adipiscing ornare amet.</p>
+											<h4> {{ snap }} </h4>
+											<p> {{ snap2 }} </p>
 										</div>
 									</article>
 								</div>
 							</div>
 						</section>
 
-						<!-- Two -->
-							<section id="two">
-								<div class="container">
-									<h3>Things I Can Do</h3>
-									<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer lorem ipsum dolor sit amet.</p>
-									<ul class="feature-icons">
-										<li class="fa-code">Write all the code</li>
-										<li class="fa-cubes">Stack small boxes</li>
-										<li class="fa-book">Read books and stuff</li>
-										<li class="fa-coffee">Drink much coffee</li>
-										<li class="fa-bolt">Lightning bolt</li>
-										<li class="fa-users">Shadow clone technique</li>
-									</ul>
-								</div>
-							</section>
-
 
 						<!-- Four -->
 							<section id="four">
-								<div class="container">
-									<h3>Contact Me</h3>
-									<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer. Integer eu ante ornare amet commetus.</p>
-									<form method="post" action="#">
+								<div id="four_" class="container">
+									<h3> {{ title }} </h3>
+									<p> {{ latin }} </p>
+									<form method="post" action="#" id="signup-form" @submit.prevent="processForm">
 										<div class="row gtr-uniform">
-											<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
-											<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
-											<div class="col-12"><input type="text" name="subject" id="subject" placeholder="Subject" /></div>
-											<div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="6"></textarea></div>
+											<div class="col-6 col-12-xsmall"><input 
+												type="text" 
+												name="name" 
+												v-model="name" 
+												id="name" />
+											</div>
+
+											<div class="col-6 col-12-xsmall"><input 
+												type="email" 
+												name="email" 
+												id="email" 
+												v-model="email" />
+											</div>
+
+											<div class="col-12"><input 
+												type="text" 
+												name="subject" 
+												id="subject" 
+												v-model="subject" />
+											</div>
+
+											<div class="col-12"><textarea 
+												type="text"
+												name="message" 
+												id="message" 
+												v-model="message" 
+												rows="6"></textarea>
+											</div>
+
 											<div class="col-12">
 												<ul class="actions">
-													<li><input type="submit" class="primary" value="Send Message" /></li>
-													<li><input type="reset" value="Reset Form" /></li>
+													<li><input 
+														type="submit" 
+														class="primary" 
+														value="Send Message" />
+													</li>
+
+													<li><input 
+														type="reset" 
+														value="Reset Form" />
+													</li>
 												</ul>
 											</div>
 										</div>
 									</form>
 								</div>
 							</section>
+
+						<!-- Clapping Button -->
+							<html lang="en" dir="ltr">
+							<section id="clappingbutton">
+							  <head>
+								<meta charset="utf-8">
+								<title> Clapping Button in Vue</title>
+								<script src="vue.js"></script>
+								<style>
+								  body {
+									background-color: cyan;
+								  }
+								  #app {
+									text-align: center;
+									padding-top: 150px; 
+								  }
+								</style>
+							  </head>
+							  <body>
+								<div id="app">
+								  <button v-on:click="increase"> 
+									<!-- you could apply the @click/v-on:click to this or the image, the button just gives a nice effects -->
+									<img src="clappingPic.jpeg" alt="">
+									<p> {{ counter }}</p>
+								  </button>
+								</div>
+							  </body>
+							</section>  
+							</html>
 
 						<!-- Five -->
 						<!--
@@ -483,6 +548,10 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
+			<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+			<script src="C:\Users\hostetl\Desktop\Journey\Portfolio\index.js"></script>
+			<!-- development version, includes helpful console warnings -->
+			<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+			<script srs="./vue.js"></script>
 	</body>
 </html>
