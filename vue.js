@@ -3,7 +3,7 @@
 var myVueApp = new Vue({
     el: '#signup-form',
     data: {
-        name: 'ASDF',
+        name: 'FDSA',
         email: 'ASDF',
         subject: 'ASDF',
         message: 'ASDF',

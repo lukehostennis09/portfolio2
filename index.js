@@ -3,7 +3,7 @@
 var myVueApp = new Vue({
     el: '#one_',
     data: {
-        title: 'Hello World!',
+        title: 'Heyo Everyone!',
         text: 'Why was Six Afraid of Seven?',
         subtitle1: 'Because 7 8 9!',
         latin: 'Even though I don\'t speak Latin, check this out!  Faucibus sed lobortis aliquam lorem blandit. Lorem eu nunc metus col. Commodo id in arcu ante lorem ipsum sed accumsan erat praesent faucibus commodo ac mi lacus. Adipiscing mi ac commodo. Vis aliquet tortor ultricies non ante erat nunc integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum.',
